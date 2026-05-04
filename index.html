@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinIQ | Smart Skincare Starts Here</title>
+    <meta name="description" content="Analyze your skin type and discover skincare products made for you.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="logo">Skin<span>IQ</span></div>
+        <ul class="nav-links">
+            <li><a href="#" data-page="home-page" class="active">Home</a></li>
+            <li><a href="#" data-page="analysis-page">Analysis</a></li>
+            <li><a href="#" data-page="products-page">Products</a></li>
+            <li><a href="#" data-page="about-page">About</a></li>
+            <li><a href="#" data-page="contact-page">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="cart-toggle" class="btn-icon" aria-label="Toggle Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span id="cart-count">0</span>
+            </button>
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Pages Container -->
+    <main id="main-content">
+        
+        <!-- HOME PAGE -->
+        <section id="home-page" class="page active">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Smart Skincare Starts Here</h1>
+                    <p>Personalized and customized skincare solutions based on user preferences.</p>
+                    <button class="btn btn-primary" onclick="navigateTo('analysis-page')">Start Skin Analysis</button>
+                </div>
+                <div class="hero-image">
+                    <img src="file:///C:/Users/bkbis/.gemini/antigravity/brain/d88e58af-1b5b-4a09-a8c0-8058d60493ae/hero_skincare_1777908898165.png" alt="Premium Skincare">
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="section features bg-light">
+                <h2 class="text-center">Why Choose SkinIQ</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass">
+                        <h3>AI Analysis</h3>
+                        <p>Our smart diagnostic tool identifies your exact skin type and concerns.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <h3>100% Customizable</h3>
+                        <p>Personalized and customized skincare solutions based on user preferences.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <h3>Visible Results</h3>
+                        <p>Achieve your skincare goals with a personalized routine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it works -->
+            <div class="section how-it-works">
+                <h2 class="text-center">How It Works</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Take the Quiz</h4>
+                        <p>Answer a few questions about your skin.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Get Analyzed</h4>
+                        <p>Discover your unique skin profile.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Shop Routine</h4>
+                        <p>Purchase your personalized products.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Highlights -->
+            <div class="section highlights bg-light">
+                <h2 class="text-center">Bestsellers</h2>
+                <div class="product-grid" id="highlight-products">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="section testimonial">
+                <div class="testimonial-card glass">
+                    <p class="quote">"SkinIQ completely transformed my routine. The analysis was spot on, and the recommended products cleared my skin in weeks!"</p>
+                    <p class="author">- Sarah M.</p>
+                </div>
+            </div>
+
+            <!-- Contact Section on Home Page -->
+            <div class="section contact-container">
+                <h2 class="text-center" style="margin-bottom: 3rem;">Contact Us</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info glass">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions about your routine? We're here to help.</p>
+                        <ul class="contact-details">
+                            <li><strong>Email:</strong> <a href="mailto:support@skiniq.com">support@skiniq.com</a></li>
+                            <li><strong>Phone:</strong> 9733135250</li>
+                            <li><strong>Location:</strong> Model Town, Panipat (PNP), India</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#">Instagram</a>
+                            <a href="#">TikTok</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container glass">
+                        <form id="contact-form-home">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="contact-name-home" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="contact-email-home" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea id="contact-message-home" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANALYSIS PAGE -->
+        <section id="analysis-page" class="page">
+            <div class="section analysis-container">
+                <h1 class="text-center">Skin Diagnostic Tool</h1>
+                <p class="text-center subtitle">Tell us about your skin to get a personalized routine.</p>
+                
+                <div class="analysis-card glass" id="analysis-form-container">
+                    <form id="skin-analysis-form">
+                        <!-- Q1 -->
+                        <div class="form-group">
+                            <label>What is your skin type?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="skin_type" value="Oily" required> Oily</label>
+                                <label><input type="radio" name="skin_type" value="Dry"> Dry</label>
+                                <label><input type="radio" name="skin_type" value="Combination"> Combination</label>
+                                <label><input type="radio" name="skin_type" value="Sensitive"> Sensitive</label>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="form-group">
+                            <label>Main skin concern:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="concern" value="Acne" required> Acne</label>
+                                <label><input type="radio" name="concern" value="Dark spots"> Dark spots</label>
+                                <label><input type="radio" name="concern" value="Wrinkles"> Wrinkles</label>
+                                <label><input type="radio" name="concern" value="Redness"> Redness</label>
+                                <label><input type="radio" name="concern" value="Dullness"> Dullness</label>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="form-group">
+                            <label>Age group:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="age" value="Teen" required> Teen</label>
+                                <label><input type="radio" name="age" value="20-30"> 20–30</label>
+                                <label><input type="radio" name="age" value="30-45"> 30–45</label>
+                                <label><input type="radio" name="age" value="45+"> 45+</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary full-width">Analyze My Skin</button>
+                    </form>
+                </div>
+
+                <!-- Results -->
+                <div id="analysis-results" class="hidden">
+                    <h2 class="text-center">Your Skin Profile</h2>
+                    <div class="results-card glass">
+                        <div class="profile-summary">
+                            <div class="profile-item">
+                                <span class="label">Skin Type:</span>
+                                <span class="value" id="res-type"></span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="label">Main Concern:</span>
+                                <span class="value" id="res-concern"></span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="label">Age Group:</span>
+                                <span class="value" id="res-age"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="routine-summary">
+                            <h3>Recommended Routine</h3>
+                            <ul id="res-routine"></ul>
+                            
+                            <div class="text-center mt-4" style="font-weight: 600; color: var(--primary-color);">
+                                We can customize skincare products according to your preferences.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-center mt-4">Your Matched Products</h3>
+                    <div class="product-grid" id="matched-products">
+                        <!-- Injected by JS -->
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline" onclick="resetAnalysis()">Retake Analysis</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS PAGE -->
+        <section id="products-page" class="page">
+            <div class="section products-container">
+                <h1 class="text-center">Our Collection</h1>
+                
+                <div class="filters glass">
+                    <div class="filter-group">
+                        <label>Skin Type</label>
+                        <select id="filter-type">
+                            <option value="All">All</option>
+                            <option value="Oily">Oily</option>
+                            <option value="Dry">Dry</option>
+                            <option value="Combination">Combination</option>
+                            <option value="Sensitive">Sensitive</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Concern</label>
+                        <select id="filter-concern">
+                            <option value="All">All</option>
+                            <option value="Acne">Acne</option>
+                            <option value="Dark spots">Dark spots</option>
+                            <option value="Wrinkles">Wrinkles</option>
+                            <option value="Redness">Redness</option>
+                            <option value="Dullness">Dullness</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Max Price</label>
+                        <input type="range" id="filter-price" min="1000" max="10000" step="500" value="10000">
+                        <span id="price-val">₹10000</span>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="all-products">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about-page" class="page">
+            <div class="section about-container">
+                <div class="about-content glass">
+                    <h1>Our Mission</h1>
+                    <p>At SkinIQ, we believe that everyone deserves to feel confident in their own skin. Navigating the world of skincare can be overwhelming, which is why we developed a smart, data-driven approach to skincare.</p>
+                    <p>Personalized and customized skincare solutions based on user preferences. Our intelligent diagnostic tool takes the guesswork out of building a routine by analyzing your unique skin type, concerns, and age.</p>
+                    <p>We are committed to quality, transparency, and results. All our recommended products are rigorously vetted for efficacy and safety.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact-page" class="page">
+            <div class="section contact-container">
+                <div class="contact-wrapper">
+                    <div class="contact-info glass">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions about your routine? We're here to help.</p>
+                        <ul class="contact-details">
+                            <li><strong>Email:</strong> <a href="mailto:support@skiniq.com">support@skiniq.com</a></li>
+                            <li><strong>Phone:</strong> 9733135250</li>
+                            <li><strong>Location:</strong> Model Town, Panipat (PNP), India</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#">Instagram</a>
+                            <a href="#">TikTok</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container glass">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea id="contact-message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>SkinIQ</h3>
+                <p>Personalized and customized skincare solutions based on user preferences.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#" onclick="navigateTo('home-page')">Home</a>
+                <a href="#" onclick="navigateTo('analysis-page')">Analysis</a>
+                <a href="#" onclick="navigateTo('products-page')">Products</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SkinIQ. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body" id="modal-details">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content glass" style="max-width: 500px;">
+            <span class="close-btn" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items injected here -->
+            </div>
+            
+            <div id="checkout-form-container" class="mt-4 hidden">
+                <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 1.5rem 0;">
+                <h3 style="margin-bottom: 1rem;">Shipping Details</h3>
+                <form id="checkout-form">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="text" id="checkout-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="email" id="checkout-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="tel" id="checkout-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <textarea id="checkout-address" rows="2" placeholder="Street Address" required></textarea>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <input type="text" id="checkout-city" placeholder="City" required>
+                        </div>
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <input type="text" id="checkout-state" placeholder="State" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="text" id="checkout-pincode" placeholder="Pincode" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="cart-summary mt-4">
+                <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 600;">
+                    <span>Total:</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+                <button class="btn btn-primary full-width mt-4" id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="hAdYJ9K5r750jtDBb8Bsp";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
